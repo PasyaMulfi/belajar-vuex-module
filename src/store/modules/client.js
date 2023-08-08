@@ -4,7 +4,7 @@ const client = {
         listBantuan: [
             { name: "Gempa Lombok" },
             { name: "Beasiswa Pendidikan" },
-            { name: "Banjir Bandung" },
+            { name: "Banjir Bandang" },
             { name: "Tanggungan Kesehatan" },
         ],
     },
