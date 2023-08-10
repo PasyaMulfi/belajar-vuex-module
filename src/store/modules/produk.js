@@ -16,6 +16,12 @@ const produk = {
             console.log("Produk:", produk);
             return produk;
         },
+        getProdukByCategory: (state) => (produkCategory) => {
+            const produk = state.produkData.filter(
+          (p) => p.category == produkCategory
+            );
+            return produk
+        },
     },
     actions: {
         async fetchProduk({ commit }) {
@@ -29,12 +35,12 @@ const produk = {
         },
 
         // get single product
-        async fetchSingleProduk({ commit }, produkId) {
+        async fetchFilterProduk({ commit }, produkCategory) {
             try {
                 const response = await axios.get(
-                    `https://fakestoreapi.com/products/${produkId}`
+                    `https://fakestoreapi.com/products/category/${produkCategory}`
                 );
-                commit("SET_SINGLE_PRODUK", response.data);
+                commit("SET_FILTER_PRODUK", response.data);
             } catch (error) {
                 alert(error);
                 console.log(error);
@@ -48,6 +54,9 @@ const produk = {
         SET_SINGLE_PRODUK(state, produk) {
             state.singleProduk = produk;
         },
+        SET_FILTER_PRODUK(state, produk) {
+            state.filterProduk = produk;
+        }
     },
 };
 

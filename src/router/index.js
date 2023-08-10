@@ -5,6 +5,9 @@ import Api from "../views/Api.vue"
 import Produk from "../views/Produk.vue"
 import SingleProduk from "../views/SingleProduk.vue"
 import Category from "../views/Category.vue";
+import FilterPageCategory from "../views/FilterPageCategory.vue"
+import Login from "../views/Login.vue"
+import store from "../store";
 
 
 const routes = [
@@ -38,16 +41,30 @@ const routes = [
         name: "catgories",
         component: Category,
     },
+    {
+        path: "/category/:category",
+        name: "FilterCategory",
+        component: FilterPageCategory,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login,
+        meta: { requiresGuest: true },
+    },
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    User,
-    Api,
-    Produk,
-    SingleProduk,
-    Category
+});
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresGuest && store.getters["auth/isAuthenticated"]) {
+        next("/");
+    } else {
+        next();
+    }
 });
 
 export default router;  

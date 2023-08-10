@@ -6,6 +6,7 @@ import users from "./modules/user";
 import api from "./modules/api"
 import produk from "./modules/produk"
 import category from "./modules/category"
+import auth from "./modules/auth"
 
 const store = createStore({
     state: {
@@ -18,7 +19,8 @@ const store = createStore({
         users,
         api,
         produk,
-        category
+        category,
+        auth
     },
 });
 
