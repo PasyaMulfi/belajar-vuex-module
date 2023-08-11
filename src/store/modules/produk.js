@@ -20,6 +20,7 @@ const produk = {
             const produk = state.produkData.filter(
           (p) => p.category == produkCategory
             );
+            console.log(produkCategory)
             return produk
         },
     },

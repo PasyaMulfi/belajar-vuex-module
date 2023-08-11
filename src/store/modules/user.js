@@ -12,7 +12,7 @@ const users = {
         async fetchUsers({ commit }) {
             try {
                 const data = await axios.get(
-                    "https://jsonplaceholder.typicode.com/users"
+                    "https://fakestoreapi.com/users?limit=5"
                 );
                 commit("SET_USERS", data.data);
             } catch (error) {
@@ -20,10 +20,24 @@ const users = {
                 console.log(error);
             }
         },
-    },
-    mutations: {
-        SET_USERS(state, users) {
-            state.userData = users;
+        async createUsers({ commit }) {
+            try {
+                const data = await axios.get(
+                    "https://fakestoreapi.com/users"
+                );
+                commit("ADD_USERS", data.data);
+            } catch (error) {
+                alert(error);
+                console.log(error);
+            }
+        }
+        },
+        mutations: {
+            SET_USERS(state, users) {
+                state.userData = users;
+            },
+            ADD_USERS(state, users) {
+                state.userData.push(users);
         },
     },
 };

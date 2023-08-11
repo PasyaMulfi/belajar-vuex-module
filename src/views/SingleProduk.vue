@@ -196,6 +196,7 @@ export default {
         },
     },
     methods: {
+        
         ...mapActions("produk", ["fetchSingleProduk"]),
     },
     mounted() {

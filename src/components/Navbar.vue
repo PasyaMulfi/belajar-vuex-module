@@ -2,8 +2,8 @@
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <router-link to="/" class="flex items-center">
-        <img src="https://w7.pngwing.com/pngs/125/64/png-transparent-von-dutch-t-shirt-logo-fashion-t-shirt-love-hat-text.png" class="h-8 mr-3" alt="Flowbite Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Vondutch</span>
+        <img src="https://www.vondutch.co.id/img/82cart-1554360794.jpg" class="h-14 mr-3" alt="Flowbite Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" ></span>
       </router-link>
       <button data-collapse-toggle="navbar-default" type="button"
         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

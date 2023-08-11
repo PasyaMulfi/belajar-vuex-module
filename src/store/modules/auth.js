@@ -15,8 +15,8 @@ const auth = {
                     "https://fakestoreapi.com/auth/login",
                     credentials
                 );
-                const token = response.data.token;
 
+                const token = response.data.token;
                 // Save token to localStorage
                 localStorage.setItem("token", token);
 
@@ -32,6 +32,7 @@ const auth = {
             // Remove token from localStorage
             const token = localStorage.getItem("token");
             localStorage.removeItem("token");
+            
             commit("SET_TOKEN", "");
             // Log token removed
             console.log("Token removed:", token);
